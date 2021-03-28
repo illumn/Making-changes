@@ -144,3 +144,19 @@ let obj2 = {
 }
 // თქვენმა ფუნქციამ უნდა დააბრუნოს true-რახან value-ები ერთმანეთს ემთხვევა
 // 1 value მაინც თუ არ ემთხვევა დააბრუნეთ false
+
+function compareObjectValues(compareObjectValues1, compareObjectValues2){
+    let firstValue = Object.value(compareObjectValues1);
+    let secondValue = Object.value(compareObjectValues2);
+
+    if (firstValue !== secondValue) {
+        return false;
+    }
+
+    for (let i = 0; i < firstValue.length; i++) {
+        const valueFromObject1 = firstValue[i];
+        for (let j = 0; j < secondValue.length; j++) {
+            
+        }
+    }
+}

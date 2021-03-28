@@ -43,9 +43,6 @@ function start(){
 function createNewUser(name, password, role){
     // ზემოთ აღწერილი ობიექტების მსგავსად შექმენით ახალი ობიექტი
     // ეს ობიექტი და-push-ეთ usersDatabase-ში
-    name = prompt("Enter name");
-    password = prompt("Make password");
-    role = prompt("what will be your role");
     const newUser = { 
         userName: name,
         Password: password,
@@ -56,7 +53,12 @@ function createNewUser(name, password, role){
 console.log(usersDatabase);
 
 function register(){
-    createNewUser();
+    const signName = prompt("Enter name");
+    const signPassword = prompt("Make password");
+    const signRole = prompt("what will be your role");
+    createNewUser(signName, signPassword, signRole);
+
+    login();
     // გამოიძახეთ 3 prompt-ი და შეინახეთ ცვლადებში
     // შემდეგ გამოიძახეთ createNewUser() - და გადააწოდეთ თქვენი შემოტანილი ცვლადები
     // შემდეგ გამოიძახეთ login();
@@ -68,11 +70,36 @@ function login(){
     // თუ მომხმარებლის სახელი და პაროლი ემთხვევა:
     // დაბეჭდეთ 'გამარჯობა: ' + მომხმარებლის username
     // გამოიძახეთ runApp-და გადააწოდეთ ამ ფუნქციას usersDatabase-ში ნაპოვნი ობიექტი
+    const loginUserName = prompt('Enter Username');
+    const loginPassword = prompt('Enter Password');
+
+    for (const user of usersDatabase) {
+        if(user.userName === loginUserName && user.password === loginPassword){
+            console.log(`Hi : ${user.userName}`);
+            runApp(user);
+
+            return;
+        }
+    }
 }
 
 function runApp(currentUser){
     // switch-case-ის მეშვეობით შეამოწმეთ მომხმარებლის role-ი
     // გამოიტანეთ სხვადასხვა ტექსტები
+    switch (currentUser.role) {
+        case 'user':
+            console.log('Hi User');
+            break;
+        case 'admin':
+            console.log('Whats up captain');
+            break;
+        case 'moderator':
+            console.log("How it's cowboy");
+            break;
+        default:
+            alert("WHO IS this ???????");
+            break;
+    }
 }
 
 // challenge 1:

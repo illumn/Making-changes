@@ -43,6 +43,13 @@ function start(){
 function createNewUser(name, password, role){
     // ზემოთ აღწერილი ობიექტების მსგავსად შექმენით ახალი ობიექტი
     // ეს ობიექტი და-push-ეთ usersDatabase-ში
+    for (user of usersDatabase) {
+        if (user.userName === name) {
+            console.log("User already exists");
+            return;
+        }
+    }
+
     const newUser = { 
         userName: name,
         Password: password,
@@ -110,7 +117,14 @@ function runApp(currentUser){
 // დაწერეთ ფუნქცია compareObjects - გადმოგეცემეთ 2 უცნობი ობიექტი
 // Object.keys()-ის გამოყენებით 
 // შეამოწმეთ ემთხვევა თუ არა ორივე ობიექტის ყველა key-value ერთმანეთს
-
+function compareObjects(obj1, obj2){
+    for (const key of Object.keys(obj1)) {
+        if (obj1[key] !== obj2[key]) {
+            return false;
+        }
+    }
+    return true;
+}
 // bonus 2:
 // დაწერეთ ფუნქცია compareObjectValues - გადმოგეცემეთ 2 უცნობი ობიექტი
 // Object.values()-ის გამოყენებით 

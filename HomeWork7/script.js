@@ -84,17 +84,26 @@ let moviesDatabase = [];
 // დაწერეთ ფუნქცია addMovieToDatabase(name, director, year);
 // ფუნქციაში შექმენით ახალი ობიექტი ზემოთ აღწერეილი სტრუქტურის მიხედვით
 // შექმნილი ობიექტი და-push-ეთ moviesDatabase-ში.
+function addMovieToDatabase(name, director, year){
 
+}
 // 6.
 // დაწერეთ ფუნქცია printAllMoviesInDb()
 // მოცემულ ფუნქციაში დაბეჭდეთ ყველა ფილმის სახელი moviesDatabase-იდან
+function printAllMoviesInDb(){
 
+}
 // 7. challenge 
 // დაწერეთ ფუნქცია: findMovie(movieName)
 // moviesDabase-ში იპოვეთ ობიექტი რომლის name-property არის movieName.
 // დაა-return-ეთ ნაპოვნი ობიექტი
 // თუ ობიექტს ვერ იპოვნით დაარეთურნეთ false
-
+function findMovie(movieName){
+    
+}
 // 8. challenge 
 // დაწერეთ ფუნქცია: listMoviesByDirector(director),
 // დაბეჭდეთ ყველა ფილმი გადმოწოდებული რეჟისორის მიერ.
+function listMoviesByDirector(director){
+    
+}
